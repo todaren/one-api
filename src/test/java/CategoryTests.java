@@ -54,6 +54,8 @@ public class CategoryTests {
         assertThat(getResponse.isSuccess(), is(true));
         assertThat(getResponse.getBody().getObject().get("id"), is(id.toString()));
         assertThat(getResponse.getBody().getObject().get("name"), is(name));
+
+        httpClient.shutDown();
     }
 
     /**
@@ -98,6 +100,8 @@ public class CategoryTests {
         assertThat(getResponse.isSuccess(), is(true));
         assertThat(getResponse.getBody().getObject().get("id"), is(id.toString()));
         assertThat(getResponse.getBody().getObject().get("name"), is(updatedName));
+
+        httpClient.shutDown();
     }
 
     /**
@@ -137,6 +141,8 @@ public class CategoryTests {
         assertThat(getResponse.isSuccess(), is(false));
         assertThat(getResponse.getBody().getObject().get("code"), is(404));
         assertThat(getResponse.getBody().getObject().get("name"), is("NotFound"));
+
+        httpClient.shutDown();
     }
 
     /**
@@ -178,5 +184,7 @@ public class CategoryTests {
         assertThat(getResponse.isSuccess(), is(true));
         assertThat(categoryJson.get("id"), is(id.toString()));
         assertThat(categoryJson.get("name"), is(name));
+
+        httpClient.shutDown();
     }
 }
