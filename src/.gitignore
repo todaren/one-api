@@ -1,3 +1,4 @@
 build
 .gradle
 .idea
+.allure/allure-2.13.1
